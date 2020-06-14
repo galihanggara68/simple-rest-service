@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REST Client</title>
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container card">
+        <div class="row card-body">
+            <div class="col-md">
+                <h3 class="text-center">Config</h3>
+                <div class="accordion">
+                    <div class="card">
+                        <div class="card-header">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#configCollapse" aria-expanded="false" aria-controls="configCollapse">
+                                Show/Hide Config
+                            </button>
+                        </div>
+                        <div class="collapse jumbotron" id="configCollapse">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="server">Server Address :</label>
+                                    <input type="text" class="form-control" id="server" aria-describedby="serverHelp" placeholder="Enter Server Address" />
+                                    <small id="serverHelp" class="form-text text-muted">ex: http://localhost/restapi</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="objectIdentity">Object Identity : </label>
+                                    <input type="text" class="form-control" id="objectIdentity" aria-describedby="objectIdentityHelp" placeholder="Object Identity" />
+                                    <small id="objectIdentityHelp" class="form-text text-muted">ex: user_id, todo_id, member_id</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="objectTitle">Object Title : </label>
+                                    <input type="text" class="form-control" id="objectTitle" aria-describedby="objectTitleHelp" placeholder="Object Title" />
+                                    <small id="objectTitleHelp" class="form-text text-muted">ex: name, item_name, username</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="listEndpoint">List End Point :</label>
+                                    <input type="text" class="form-control" id="listEndpoint" aria-describedby="listEndpointHelp" placeholder="End Point of List Object" />
+                                    <small id="listEndpointHelp" class="form-text text-muted">ex: /, /users, /todos</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="detailEndpoint">Detail End Point :</label>
+                                    <input type="text" class="form-control" id="detailEndpoint" aria-describedby="detailEndpointHelp" placeholder="End Point of One Object" />
+                                    <small id="detailEndpointHelp" class="form-text text-muted">ex: /users/{id}, /todos/{id}</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="detailEndpoint">Add New End Point :</label>
+                                    <input type="text" class="form-control" id="addNewEndpoint" aria-describedby="addNewEndpointHelp" placeholder="Where we can insert new data?" />
+                                    <small id="addNewEndpointHelp" class="form-text text-muted">ex: /users, /todos, /members/add</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="updateEndpoint">Update End Point :</label>
+                                    <input type="text" class="form-control" id="updateEndpoint" aria-describedby="updateEndpointHelp" placeholder="Where we can update a data?" />
+                                    <small id="updateEndpointHelp" class="form-text text-muted">ex: /users/{id}/update, /todos</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="deleteEndpoint">Delete End Point :</label>
+                                    <input type="text" class="form-control" id="deleteEndpoint" aria-describedby="deleteEndpointHelp" placeholder="Where we can delete a data?" />
+                                    <small id="deleteEndpointHelp" class="form-text text-muted">ex: /user/{id}, /todos/{id}/delete, /members</small>
+                                </div>
+                                <button class="btn btn-primary" id="saveChangesBtn">Save Config</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <h3 class="text-center">List Of Objects</h3>
+                <button class="btn btn-primary" id="refreshBtn">Refresh List</button>
+                <button class="btn btn-success" id="addNewBtn">Add New</button>
+                <div id="listObjects">
+
+                </div>
+            </div>
+            <div class="col-md">
+                <h3 class="text-center">Details</h3>
+                <form id="frmDetail" onsubmit="return false">
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/jquery-3.3.1.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
